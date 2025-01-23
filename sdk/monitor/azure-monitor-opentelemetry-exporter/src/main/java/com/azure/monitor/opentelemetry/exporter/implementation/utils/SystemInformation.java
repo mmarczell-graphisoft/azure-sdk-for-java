@@ -28,7 +28,7 @@ public class SystemInformation {
     private static final String processId = initializeProcessId();
 
     public static String getProcessId() {
-        return Integer.toString(Process.myPid());
+        return processId;
     }
 
     public static boolean isWindows() {
