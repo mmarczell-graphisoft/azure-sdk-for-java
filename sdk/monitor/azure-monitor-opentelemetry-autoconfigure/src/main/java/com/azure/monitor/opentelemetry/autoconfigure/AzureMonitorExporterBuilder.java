@@ -127,7 +127,9 @@ class AzureMonitorExporterBuilder {
             builder.setConnectionString(connectionString);
             builder.setResource(resource);
             builder.addTag(ContextTagKeys.AI_INTERNAL_SDK_VERSION.toString(), VersionGenerator.getSdkVersion());
-            // TODO (trask) unify these
+            if (resource.getAttribute(OsIncubatingAttributes.OS_NAME).equals("android")) {
+                builder.addTag(ContextTagKeys.AI_DEVICE_TYPE.toString(), "Android");
+            }
             resourceParser.updateRoleNameAndInstance(builder, resource);
         };
     }

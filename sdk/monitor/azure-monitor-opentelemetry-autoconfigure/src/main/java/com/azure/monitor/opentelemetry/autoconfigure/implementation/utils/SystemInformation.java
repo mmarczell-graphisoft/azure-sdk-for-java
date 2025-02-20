@@ -6,7 +6,7 @@ package com.azure.monitor.opentelemetry.autoconfigure.implementation.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.management.ManagementFactory;
+import android.os.Process;
 import java.util.Locale;
 
 public class SystemInformation {
@@ -44,24 +44,7 @@ public class SystemInformation {
      * access it.
      */
     private static String initializeProcessId() {
-        String rawName = ManagementFactory.getRuntimeMXBean().getName();
-        if (!Strings.isNullOrEmpty(rawName)) {
-            int i = rawName.indexOf("@");
-            if (i != -1) {
-                String processIdAsString = rawName.substring(0, i);
-                try {
-                    Integer.parseInt(processIdAsString);
-                    return processIdAsString;
-                } catch (RuntimeException e) {
-                    logger.error("Failed to fetch process id: '{}'", e.toString());
-                    logger.error("Failed to parse PID as number: '{}'", e.toString());
-                    logger.debug(e.getMessage(), e);
-                }
-            }
-        }
-        logger.error("Could not extract PID from runtime name: '" + rawName + "'");
-        // Default
-        return DEFAULT_PROCESS_NAME;
+        return Integer.toString(android.os.Process.myPid());
     }
 
     private SystemInformation() {
