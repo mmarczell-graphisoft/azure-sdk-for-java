@@ -114,6 +114,7 @@
     <module>sdk/hybridnetwork</module>
     <module>sdk/identity</module>
     <module>sdk/imagebuilder</module>
+    <module>sdk/impactreporting</module>
     <module>sdk/informaticadatamanagement</module>
     <module>sdk/iotcentral</module>
     <module>sdk/iotfirmwaredefense</module>
@@ -163,6 +164,7 @@
     <module>sdk/parents</module>
     <module>sdk/peering</module>
     <module>sdk/personalizer</module>
+    <module>sdk/pineconevectordb</module>
     <module>sdk/playwrighttesting</module>
     <module>sdk/policyinsights</module>
     <module>sdk/postgresql</module>

@@ -10,6 +10,11 @@
 
 #### Other Changes
 
+### 4.36.1 (2025-02-08)
+
+#### Bugs Fixed
+* Fixed an issue in change feed where under certain rare race conditions records could be skipped and excessive requests are prefetched. - See [PR 43788](https://github.com/Azure/azure-sdk-for-java/pull/43788)
+
 ### 4.36.0 (2025-01-14)
 
 #### Features Added
