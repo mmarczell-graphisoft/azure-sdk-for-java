@@ -195,7 +195,7 @@
       <plugin>
         <groupId>com.simpligility.maven.plugins</groupId>
         <artifactId>android-maven-plugin</artifactId>
-        <version>4.3.0</version> <!-- use latest release -->
+        <version>4.6.0</version> <!-- use latest release -->
         <extensions>true</extensions>
       </plugin>
       <plugin>
